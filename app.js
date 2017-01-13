@@ -1,6 +1,6 @@
 var express = require("express");
 var mongoose = require("mongoose");
-mongoose.connect("mongodb://drew:drew77@ds011432.mlab.com:11432/polly");
+
 var Poll  = require("./models/polls.js");
 var app = express();
 app.use(express.static('public'));
@@ -79,22 +79,8 @@ app.use(function(req, res, next){
    next();
 });
 
-mongoose.connect("mongodb://localhost/pollsite");
+mongoose.connect("mongodb://drew:drew77@ds011432.mlab.com:11432/polly");
 
-// Poll.create({
-//     title: '12th poll',
-//     question: '12',
-//     image: "http://blog.sanatanatech.com/wp-content/uploads/2013/12/thumbs-up.jpg",
-//     answers : [['Yes', 5], ['No', 1]]
-//     },
-//     function(err, poll){
-//         if (err){
-//             console.log('Too bad So Sad');
-//         }
-//         else {
-//             console.log('Created new poll - ' + poll.title);
-//         }
-//     })
 
 // passes current user data to all views
 
