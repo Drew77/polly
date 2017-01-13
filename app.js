@@ -43,7 +43,7 @@ passport.deserializeUser(function(id, done) {
 passport.use(new FacebookStrategy({
     clientID: '324558804598513',
     clientSecret: '273daccbfe1762d2717bb44af928d1e1',
-    callbackURL: 'https://fcc-projects-amail.c9users.io/auth/facebook/callback'
+    callbackURL: 'https://calm-fortress-11755.herokuapp.com/auth/facebook/callback'
   },
   function(accessToken, refreshToken, profile, cb) {
      console.log(profile);
