@@ -1,0 +1,17 @@
+<% include partials/header.ejs %>
+
+<div id="page" class="container">
+    
+    <form class="form-horizontal" role="form" action="/signup" method="POST">
+      <input type="text" class="form-control" name ="username" placeholder="Username" required>
+      <input type="password" class="form-control" name="password" placeholder="Password" required>
+      <button type="submit" class="submit btn btn-default">Submit</button>
+    </form>
+    
+    <form action="/auth/facebook" method="get">
+    <button class="fb">Login in with Facebook</button>
+    </form>
+</div>    
+
+
+<% include partials/footer.ejs %>

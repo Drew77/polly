@@ -1,0 +1,22 @@
+<% include partials/header.ejs %>
+
+<div id="page" class="container">
+    <h1> Create a New Poll</h1>
+    <form action="/create" method="POST">
+        <input class="form-control" type="text" name="poll[title]" placeholder="Poll Title" required>
+        <input class="form-control" type="text" name="poll[question]" placeholder="Poll Question" required>
+        <input class="form-control" type="text" name="poll[image]" placeholder="Poll Image">
+        <input class="form-control" type="text" name="answer" placeholder="Possible Answer 1" required>
+        <input class="form-control" type="text" name="answer" placeholder="Possible Answer 2" required>
+        <button class="submit btn btn-primary btn-lg">Submit</button>
+    </form>
+    <div class="extra-answers">
+        <button id ="addAnswer" class="btn btn-primary btn-lg">Add another Answer</button>
+        <button id ="removeAnswer" class="btn btn-primary btn-lg">Remove Latest Answer</button>
+    </div>
+</div>
+
+
+
+
+<% include partials/footer.ejs %>

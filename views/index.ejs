@@ -1,0 +1,27 @@
+<% include partials/header.ejs %>
+
+<div id ='page'>
+    <div class="container jumbotron">
+      <h1><i class="fa fa-bar-chart" aria-hidden="true">  </i>Welcome to Polly!</h1>
+      <p>Signup to create you own polls, or click on the link below to see existing users polls</p>
+      <a class="btn btn-primary btn-lg" href="/polls" role="button">See All Polls</a>
+      <% if (currentUser){ %>
+      <a class="btn btn-primary btn-lg" href="/create" role="button">Create a Poll</a>
+      <% } %>
+    </div>
+    <div id="polls" class="container">
+        <div class="row">
+            <h3>Most Recent Polls</h3>
+            <% p.forEach(function(poll){ %>
+                <div class="col-md-12 col-sm-12 col-xs-12 preview">
+                    <h3><a href="/polls/<%= poll._id %>"> <%= poll.title %></a></h3>
+  
+                </div>
+            <% }); %>
+       </div>
+    </div>
+</div>
+
+
+
+<% include partials/footer.ejs %>

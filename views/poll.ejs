@@ -1,0 +1,45 @@
+<% include partials/header.ejs %>
+
+<div id="page" class="container">
+    <h1> <%= poll.title %></h1>
+    <div class="well">
+
+
+<img class="thumbnail" src=" <%= poll.image %>">
+
+<h3> Question - <%= poll.question %></h3>
+<% if (!voted) { %>
+<form action="/polls/<%= poll._id %>?_method=PUT" method="POST">
+    <% poll.answers.forEach(function(answer){ %>
+        <div class="options">
+            <input  type="radio" name="vote" value="<%= Object.keys(answer) %>">  <%= Object.keys(answer) %> <br>
+        </div>
+    <% }) %>
+    <% if (currentUser) { %>
+        <input type="text" name="new" placeholder="New answer">
+    <% } %>
+    <button>Submit</button>
+        </form>
+<% } %>
+<% if (voted)  {%>
+   
+    <div id="plot">
+        
+        <canvas id="votes" width="250" height="250"></canvas>
+     
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.js"></script>
+    <script>
+    var pieData = <%- JSON.stringify(data) %> 
+    var context = document.getElementById('votes').getContext('2d');
+    var skillsChart = new Chart(context).Pie(pieData);
+    </script>
+
+    </div>
+    <% } %>
+</div>
+</div>
+
+
+
+<% include partials/footer.ejs %>

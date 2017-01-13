@@ -1,0 +1,42 @@
+<% include partials/header.ejs %>
+
+
+
+<div id="page" class ="container">
+    <h1>Your Polls</h1>
+    <div class="row">
+        <table class="table table-striped">
+    <thead>
+        
+      <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Submitted</th>
+      </tr>
+    </thead>
+    <tbody>
+        <% var num = 0; %>
+        <% user.polls.forEach(function(poll){ %>
+        <tr class="tableRow" id="row<%= num %>">
+          <% num ++ %>
+        <td> <a href="/polls/<%= poll._id %>"><%= poll.title %> </td>
+        <td> <%= poll.author.username %> </td>
+        <td> <%= poll.date.toUTCString() %></td>
+      </tr>
+      </a>
+        <% }) %>
+       </tbody>
+      </table>
+        </div>
+      <% var tables =1 +  (num - num%10) / 10;  %>
+        <ul id="tableselect" class="pagination">
+      <% for (var i = 0; i < tables; i++){ %>
+        <li id ="<%= i %>"><a href="#"><%= i + 1 %></a></li>
+        <% } %>
+      </ul>
+        
+</div>
+
+
+
+<% include partials/footer.ejs %>

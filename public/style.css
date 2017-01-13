@@ -1,0 +1,121 @@
+#header {
+    background: blue;
+    min-height: 5%;
+    padding-top: 0;
+}
+
+
+
+h1 {
+    text-align: center;
+    margin-top: 0;
+    padding: 10px;
+    margin-bottom:0;
+}
+
+h3 { 
+    margin: 20px 0px;
+    
+}
+
+
+.jumbotron{
+    text-align: center;
+}
+
+
+
+
+
+.preview {
+    text-align: center;
+    border: solid 1px black;
+    margin:0;
+}
+
+.well {
+    text-align: center;
+}
+
+.thumbnail {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin: 0px auto;
+}
+
+input {
+    margin: 10px 0px 10px 0px;
+}
+
+button{
+    margin: 0 auto;
+}
+
+table
+{
+    table-layout: fixed;
+    width: 100px;
+    text-align: center;
+}
+
+tr {
+    border: solid 1px black;
+}
+
+th {
+    text-align: center;
+}
+
+li:hover {
+    background: #C0CACA;
+}
+
+#plot {
+    margin: 40px auto;
+}
+
+.options {
+    text-align:left;
+    margin: 0 auto;
+    padding: 5px;
+    max-width: 180px;
+    width: 100%;
+}
+
+input {
+    max-width: 400px;
+}
+
+form {
+    width: 75%;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin: 0 auto;
+}
+
+button {
+    display: block;
+}
+
+.form-control {
+    margin: 5px auto;
+}
+
+.submit {
+     margin: 5px auto;
+     display: block;
+}
+
+.extra-answers {
+    text-align: center;
+}
+
+.fb {
+    margin-top: 10px;
+    color: white;
+    background:#3b5998;
+    padding: 5px;
+}
