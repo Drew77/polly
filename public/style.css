@@ -73,6 +73,7 @@ li:hover {
 
 #plot {
     margin: 40px auto;
+    width:50%;
 }
 
 .options {

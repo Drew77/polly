@@ -134,16 +134,15 @@ app.get('/polls/:id', function(req, res){
         if(err){
             console.log(err);
         }
-        else{
-            var data = [];
+        else{ 
+            var data = {labels: [], datasets:[{data: [],backgroundColor:[]}]};
             var colors = pColor(poll.answers.length);
             poll.answers.forEach(function(answer, i){
-              var obj = {};
-              obj.value = answer[Object.keys(answer)],
-              obj.label = Object.keys(answer),
-              obj.color = colors[i];
-              data.push(obj);
+                data.datasets[0].data.push(answer[Object.keys(answer)]);
+                data.labels.push(Object.keys(answer)[0]);
+                data.datasets[0].backgroundColor.push(colors[i]);
             })
+            console.log(data)
             res.render('poll.ejs', {poll: poll, voted:voted, data:data})
         }
     })
